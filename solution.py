@@ -14,5 +14,5 @@ def solution(p: float, x: np.array) -> tuple:
     loc = x.mean()
     sc  = np.sqrt(np.var(x))/np.sqrt(len(x))
 
-    return 2*loc-0.032 +np.sqrt(np.var(2*x-0.032)) * norm.ppf(alpha / 2) / np.sqrt(len(x)), \
-           2*loc-0.032 + np.sqrt(np.var(2*x-0.032)) * norm.ppf(1 - alpha / 2) / np.sqrt(len(x))
+    return 2*(loc-0.032) + np.sqrt(np.var(2*(x-0.032))) * norm.ppf(alpha / 2) / np.sqrt(len(x)), \
+           2*(loc-0.032) + np.sqrt(np.var(2*(x-0.032))) * norm.ppf(1 - alpha / 2) / np.sqrt(len(x))
